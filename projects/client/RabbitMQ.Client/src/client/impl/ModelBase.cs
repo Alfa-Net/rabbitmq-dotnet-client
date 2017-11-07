@@ -1293,9 +1293,9 @@ namespace RabbitMQ.Client.Impl
         ///////////////////////////////////////////////////////////////////////////
 
         public abstract IBasicProperties CreateBasicProperties();
-        public IMessageBatch CreateMessageBatch()
+        public IBasicPublishBatch CreateBasicPublishBatch()
         {
-            return new MessageBatch(this);
+            return new BasicPublishBatch(this);
         }
 
 
@@ -1520,7 +1520,7 @@ namespace RabbitMQ.Client.Impl
             }
         }
 
-        internal void SendCommands(IList<Command> commands)
+        internal void SendCommands(List<Command> commands)
         {
             m_flowControlBlock.WaitOne();
             AllocatatePublishSeqNos(commands.Count);

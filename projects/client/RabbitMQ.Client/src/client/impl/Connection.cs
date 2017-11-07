@@ -1178,7 +1178,7 @@ entry.ToString());
             m_frameHandler.WriteFrame(f);
         }
 
-        public void WriteFrameSet(IList<OutboundFrame> f)
+        public void WriteFrameSet(List<OutboundFrame> f)
         {
             m_frameHandler.WriteFrameSet(f);
         }

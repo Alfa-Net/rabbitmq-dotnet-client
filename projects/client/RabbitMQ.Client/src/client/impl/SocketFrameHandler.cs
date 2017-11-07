@@ -229,7 +229,7 @@ namespace RabbitMQ.Client.Impl
             m_writer.Write(ms.ToArray());
         }
 
-        public void WriteFrameSet(IList<OutboundFrame> frames)
+        public void WriteFrameSet(List<OutboundFrame> frames)
         {
             var ms = new MemoryStream();
             var nbw = new NetworkBinaryWriter(ms);
